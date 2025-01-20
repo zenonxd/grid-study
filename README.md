@@ -53,6 +53,8 @@ Define o número total de colunas que serão criadas no grid, veremos alguns exe
 
 Quatro colunas de 100px de largura são criadas.
 
+100px é o valor total, ignora conteúdo, margem e etc. Respeita apenas o min-width do item.
+
 ![img_2.png](img_2.png)
 
 ![img_4.png](img_4.png)
@@ -67,12 +69,17 @@ O tamanho do conteúdo é respeitado, ou seja, se o conteúdo na primeira coluna
 
 ![img_6.png](img_6.png)
 
-### grid-template-columns: minmax(valorMin, 1fr) 1fr 1fr;
+Lembrando: o "fr" respeita o conteúdo enquanto são do mesmo tamanho, observe que no caso acima a palavra do item 1 é
+bem maior que os outros e mesmo a 2 coluna sendo 2fr, o grid respeitou o tamanho da primeira coluna.
+
+### grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
 
 Três colunas são criadas, a primeira terá no mínimo 200px de largura e no máximo 1fr (isso significa que após 200px ela
 se expande da mesma forma que as outras colunas). As outras duas colunas vão ter 1fr.
 
 ![img_5.png](img_5.png)
+
+Ao diminuir a tela, ele primeiro vai diminuir a 2 e 3 coluna, mantendo a prioridade da primeira.
 
 ### grid-template-columns: repeat(3, 1fr);
 
@@ -84,4 +91,34 @@ Cria 3 colunas com 1fr de tamanho. O repeat seria a mesma coisa que escrever 1fr
 
 Cria automaticamente um total de colunas que acomode itens com no mínimo 100px de largura.
 
+O auto vai de acordo com o conteúdo do item.
+
 ![img_8.png](img_8.png)
+
+### grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+
+A diferença para o autofit, é que o autofill irá tentar preencher colunas, tendo conteúdo ou não (mesmo que ela fique
+em branco/vazia).
+
+O autofit vai preencher com o conteúdo que tem.
+
+![img_9.png](img_9.png)
+
+
+
+## grid-template-rows
+
+Define a quantidade de linhas no grid.
+
+Se uma linha aumenta, a outra aumenta também.
+
+### grid-template-rows: 50px 100px 50px 150px;
+
+Cria 4 linhas no grid, sendo a primeira com 50px, segunda 100px, terceira 50px e quarta 150px. Caso o grid necessite
+de mais linhas, elas terão o tamanho de acordo com o conteúdo.
+
+![img_10.png](img_10.png)
+
+### grid-template-rows: 1fr 2fr;
+
+![img_11.png](img_11.png)
