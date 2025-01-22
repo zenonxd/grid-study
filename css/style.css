@@ -183,6 +183,26 @@ img {
     }
 
     .atributos {
+      background: linear-gradient(135deg, #8844ee, #b07dfb);
+      box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+      align-self: start;
+      border-radius: 5px;
+      padding: 30px;
+
+
+      li {
+        font-family: "Courier New", monospace;
+        color: white;
+        font-size: 1.125em;
+        padding: 15px;
+
+
+
+      }
+
+      li  {
+
+      }
 
     }
 
